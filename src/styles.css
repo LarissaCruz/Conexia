@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: #F8F4F1;
+}
+nav{
+  background-color: #ffffff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+}
+
+.font-title-small {
+  color: #1A1A1A;
+  font-size: 28px;
+}
+.font-title-medium {
+  color: #1A1A1A;
+  font-size: 32px;
+}
+.font-title-large {
+  color: #1A1A1A;
+  font-size: 48px;
+  line-height: 60px;
+  font-weight: 800;
+}
+
+.font-body-small {
+  color: #1A1A1A;
+  font-family: 'Montserrat';
+  font-size: 16px;
+}
+.font-body-medium {
+  color: #1A1A1A;
+  font-family: 'Montserrat';
+  font-size: 18px;
+}
+.font-body-large {
+  color: #1A1A1A;
+  font-family: 'Montserrat';
+  font-size: 22px;
+
+
+}
+.font-body-extra-large {
+  color: #1A1A1A;
+  font-family: 'Montserrat';
+  font-size: 24px;
+}
+
+.border-custom {
+  border: 1px solid #1A1A1A;
+  box-shadow: 2px 2px 0px #000000;
+}
