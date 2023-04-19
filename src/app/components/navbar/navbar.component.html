@@ -3,7 +3,8 @@
     <div>
       <a class="navbar-brand font-title-small fw-bolder fst-italic " href="#">Conexia</a>
     </div>
-    <button type="button" class="font-body-small fw-bolder btn btn-outline-primary rounded-pill border-custom">Fazer
+    <button *ngIf="mostrarBotao" type="button" (click)="naviation()"
+      class="font-body-small fw-bolder btn btn-outline-primary rounded-pill border-custom btn-hover-outline">Fazer
       Login</button>
   </div>
 </nav>

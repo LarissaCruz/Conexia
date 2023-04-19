@@ -1,3 +1,5 @@
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+
 body {
   font-family: 'Nunito Sans', sans-serif;
   background-color: #F8F4F1;
@@ -36,8 +38,6 @@ nav{
   color: #1A1A1A;
   font-family: 'Montserrat';
   font-size: 22px;
-
-
 }
 .font-body-extra-large {
   color: #1A1A1A;
@@ -49,3 +49,52 @@ nav{
   border: 1px solid #1A1A1A;
   box-shadow: 2px 2px 0px #000000;
 }
+
+.fw-semiBold{
+  font-weight: 500;
+}
+
+.thema-color-primary {
+  background-color: #B276FF;;
+}
+.thema-color-secondary {
+  background-color: #F6DE08; ;
+}
+.thema-color-success{
+  background-color: #88DE8A;;
+}
+.thema-color-pink{
+  background-color: #FFABEF;;
+}
+.color-font {
+  color:#7696FF;
+}
+
+a {
+  text-decoration: none;
+}
+
+.no-focus-outline:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn-hover-outline:hover {
+  cursor: default !important;
+  opacity: 1 !important;
+  color: #1A1A1A !important;
+  font-weight: 600 !important;
+  border: 1px solid #000 !important;
+  background-color: #D6DFFF !important;
+}
+
+
+.btn-hover:hover {
+  cursor: default !important;
+  opacity: 1 !important;
+  color: #1A1A1A !important;
+  font-weight: 600 !important;
+  border: 1px solid #000 !important;
+  background-color: #7696FF !important;
+}
+
