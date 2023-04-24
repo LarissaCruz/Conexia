@@ -23,7 +23,16 @@ nav{
   line-height: 60px;
   font-weight: 800;
 }
-
+.font-body-xsmall {
+  color: #1A1A1A;
+  font-family: 'Montserrat';
+  font-size: 14px;
+}
+.font-body-xxsmall {
+  color: #1A1A1A;
+  font-family: 'Montserrat';
+  font-size: 10px;
+}
 .font-body-small {
   color: #1A1A1A;
   font-family: 'Montserrat';

@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormContainerStep2Component } from './components/register/components/form-container-step2/form-container-step2.component';
-import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
+import { FormContainerStep2Component } from './pages/register/components/form-container-step2/form-container-step2.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { FeedComponent } from './pages/feed/feed.component';
+import { SearchComponent } from './pages/search/search.component';
+import { NotificationComponent } from './pages/notification/notification.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 const routes: Routes = [
   {
@@ -21,6 +25,23 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'feed',
+    component: FeedComponent
+  },
+  {
+    path: 'search',
+    component: SearchComponent
+  },
+  {
+    path: 'notification',
+    component: NotificationComponent
+  },
+  {
+    path: 'perfil',
+    component: PerfilComponent
+
   },
 ];
 

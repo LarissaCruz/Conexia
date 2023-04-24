@@ -12,7 +12,9 @@ export class FormLoginComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  navigationFeed() {
+    this.router.navigate(["./feed"]);
+  }
   navigation() {
     this.router.navigate(['/register'])
   }
