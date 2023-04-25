@@ -8,6 +8,9 @@ import { FeedComponent } from './pages/feed/feed.component';
 import { SearchComponent } from './pages/search/search.component';
 import { NotificationComponent } from './pages/notification/notification.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { PublicacaoComponent } from './pages/perfil/tab/publicacao/publicacao.component';
+import { SeguidoresComponent } from './pages/perfil/tab/seguidores/seguidores.component';
+import { SeguindoComponent } from './pages/perfil/tab/seguindo/seguindo.component';
 
 const routes: Routes = [
   {
@@ -41,6 +44,21 @@ const routes: Routes = [
   {
     path: 'perfil',
     component: PerfilComponent
+
+  },
+  {
+    path: 'publicacao',
+    component: PublicacaoComponent,
+
+  },
+  {
+    path: 'seguidores',
+    component: SeguidoresComponent,
+
+  },
+  {
+    path: 'seguindo',
+    component: SeguindoComponent,
 
   },
 ];

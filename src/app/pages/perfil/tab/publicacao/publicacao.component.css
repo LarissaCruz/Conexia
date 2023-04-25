@@ -1,0 +1,25 @@
+.card-post {
+  border-radius: 24px;
+  border: 1px solid #1A1A1A;
+}
+
+.form-control{
+   border: 1px solid #333333;
+}
+
+.label{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+input {
+  border: none;
+  width: 100%;
+  margin-left: 10px;
+  color:#808080;
+  font-size: 14px;
+}
+
+.form-control{
+   border: 1px solid #333333;
+}

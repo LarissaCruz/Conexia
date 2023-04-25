@@ -16,6 +16,7 @@
 
 .menu .menu-item {
   color: #91ABFF !important;
+  width: 220px !important;
 }
 .active {
   background: #BACAFF !important;

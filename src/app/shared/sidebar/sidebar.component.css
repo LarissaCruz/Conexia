@@ -6,27 +6,3 @@
   border-top: none;
 }
 
-.menu .menu-item:hover{
-  background: #BACAFF;
-  color: #1a1a1a;
-}
-.menu .menu-item span{
-  color: #808080;
-}
-
-.menu .menu-item {
-  color: #91ABFF !important;
-}
-.active {
-  background: #BACAFF !important;
-  color: #1a1a1a !important;
-}
-.active .icon {
-  background: #91ABFF !important;
-}
-
-.menu .icon{
-  width: 40px;
-  height: 40px;
-  background: #D6DFFF;
-}

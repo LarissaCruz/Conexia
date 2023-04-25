@@ -3,11 +3,7 @@
     <div class="col-2 px-0 ">
       <app-sidebar></app-sidebar>
     </div>
-
-
-
     <div class="col-8">
-
       <div class="container d-flex  flex-column align-items-center pb-4  ">
         <div class="capa w-50 py-4 d-flex flex-column align-items-center position-relative mb-5">
           <div class="avatar">
@@ -26,70 +22,31 @@
         </div>
         <ul class="nav justify-content-cente mb-4">
           <li class="nav-item" class="fw-bold font-body-small">
-            <a class="nav-link active" aria-current="page" href="#">Publicações</a>
+            <a class="nav-link active" data-toggle="tab" aria-current="page" href="#">Publicações</a>
           </li>
           <li class="nav-item" class="font-body-small">
-            <a class="nav-link" href="#">Seguindo</a>
+            <a class="nav-link" data-toggle="tab" href="#">Seguindo</a>
           </li>
           <li class="nav-item" class=" font-body-small">
-            <a class="nav-link" href="#">Seguidores</a>
+            <a class="nav-link" data-toggle="tab" href="#">Seguidores</a>
           </li>
-
         </ul>
-        <form class="p-3 bg-white card-post form-group w-50 mb-4">
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-            placeholder="O que está acontecendo?"></textarea>
-          <p class="font-body-xxsmall mt-2">0 de 300 caracteres usados.</p>
-
-          <button class="btn  bg-white border-custom rounded-pill font-body-xsmall fw-bolder w-100 mb-3">
-            <i class="bi bi-plus-lg"></i>
-            <span class="mx-3">Escolher Foto</span>
-          </button>
-          <button class="btn  rounded-pill font-body-xsmall fw-bolder w-100 text-muted border bg-light disabled">
-            Publicar
-          </button>
-        </form>
-
-        <div class="card-post p-3 bg-white card-post form-group w-50 mb-4">
-          <div class="d-flex align-items-center mb-2">
-            <div class="d-flex justify-content-center align-items-center rounded-circle icon mx-2">
-              <img src="../../../assets/avatar.png" class="rounded-circle" alt="Imagem Perfil" width="30px" />
-            </div>
-            <span class="font-body-small fw-bold">Luana Santana</span>
+        <div class="tab-content">
+          <div id="home" class="tab-pane fade in  active show">
+            <app-publicacao></app-publicacao>
           </div>
-          <img src="../../../assets/card.png " class="rounded w-100 mb-2 border border-secondary" alt="Imagem Perfil" />
-          <p class="font-body-xsmall">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique est
-            risus, at suscipit tellus
-            commodo in.</p>
-          <a class="font-body-xsmall fw-bold " style="text-decoration: underline;">Ver todos os 24 comentários</a>
-          <div class="form-control rounded-pill px-1  mt-3 justify-content-between">
-            <input type="text" class="font-body-small no-focus-outline" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Comente">
-            <i class="bi bi-send-fill" style="color:#BACAFF"></i>
+          <div id="menu1" class="tab-pane fade ">
+            <app-seguidores></app-seguidores>
           </div>
-        </div>
-
-        <div class="card-post p-3 bg-white card-post form-group w-50">
-          <div class="d-flex align-items-center mb-2">
-            <div class="d-flex justify-content-center align-items-center rounded-circle icon mx-2">
-              <img src="../../../assets/avatar.png" class="rounded-circle" alt="Imagem Perfil" width="30px" />
-            </div>
-            <span class="font-body-small fw-bold">Luana Santana</span>
+          <div id="menu2" class="tab-pane fade">
+            <app-seguindo></app-seguindo>
           </div>
-
-          <p class="font-body-xsmall">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique est
-            risus, at suscipit tellus
-            commodo in.</p>
-          <a class="font-body-xsmall fw-bold " style="text-decoration: underline;">Ver todos os 24 comentários</a>
-          <div class="form-control rounded-pill px-1  mt-3 justify-content-between">
-            <input type="text" class="font-body-small no-focus-outline" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Comente">
-            <i class="bi bi-send-fill" style="color:#BACAFF"></i>
+          <div id="menu3" class="tab-pane fade">
+            <h3>Menu 3</h3>
+            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
           </div>
         </div>
       </div>
-
-
     </div>
 
 
