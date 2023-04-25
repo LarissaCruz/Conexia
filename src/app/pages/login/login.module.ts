@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login.component';
 import { FormLoginComponent } from './components/form-login/form-login.component';
-import { SidebarModule } from 'src/app/shared/sidebar/sidebar.module';
+import { NavbarModule } from 'src/app/shared/navbar/navbar.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    SidebarModule
+    NavbarModule,
   ],
   declarations: [
     LoginComponent,

@@ -1,3 +1,4 @@
+
 <div class="container pt-3 px-0  d-flex">
   <button class="rounded-circle bg-light border-0 button-back" (click)="goBack()">
     <i class="bi bi-arrow-left"></i>
@@ -14,21 +15,26 @@
   <div class="formulario  d-flex flex-column py-4 justify-content-center align-items-center">
     <p class=" text-center font-body-medium fw-semiBold">Vamos começar pelo básico:</p>
     <form class="w-50" [formGroup]="formulario">
-      <div class="form-control rounded-pill px-3 mb-3">
+      <div class="form-control rounded-pill px-3 mb-3  d-flex justify-content-start">
         <i class="bi bi-envelope-fill " style="color:#808080;"></i>
         <input type="email" class="font-body-small no-focus-outline" formControlName="email" id="exampleInputEmail1"
           aria-describedby="emailHelp" placeholder="Email">
       </div>
-      <div class="form-control rounded-pill px-3 mb-3 justify-content-between">
-        <i class="bi bi-unlock-fill" style="color:#808080;"></i>
-        <input type="email" class="font-body-small no-focus-outline" formControlName="senha" id="exampleInputEmail1"
-          aria-describedby="emailHelp" placeholder="Senha">
+      <div class="form-control rounded-pill px-3 mb-3  d-flex justify-content-between">
+        <div>
+          <i class="bi bi-unlock-fill" style="color:#808080;"></i>
+          <input type="email" class="font-body-small no-focus-outline" formControlName="senha" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Senha">
+        </div>
         <i class="bi bi-eye-fill" style="color:#BACAFF"></i>
       </div>
-      <div class="form-control rounded-pill px-3 mb-3 justify-content-between">
-        <i class="bi bi-unlock-fill" style="color:#808080;"></i>
-        <input type="email" class="font-body-small no-focus-outline" formControlName="confirm" id="exampleInputEmail1"
-          aria-describedby="emailHelp" placeholder="Repetir senha">
+      <div class="form-control rounded-pill px-3 mb-3  d-flex justify-content-between">
+        <div>
+          <i class="bi bi-unlock-fill" style="color:#808080;"></i>
+          <input type="email" class="font-body-small no-focus-outline" formControlName="confirm" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Repetir senha">
+        </div>
+
         <i class="bi bi-eye-fill" style="color:#BACAFF"></i>
       </div>
       <p class="font-body-small mt-4 label">Escolha uma cor para o seu perfil:

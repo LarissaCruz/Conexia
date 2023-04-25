@@ -1,53 +1,10 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-2 px-0 ">
-
-      <div class="menu flex-column nav py-4 px-4 justify-content-between position-fixed">
-        <div class="">
-          <a class="navbar-brand" href="#">
-            <p class="font-title-small fw-bolder fst-italic">Conexia</p>
-          </a>
-          <a class="nav-link active px-2 py-2 rounded-pill d-flex align-items-center  mb-3" aria-current="page"
-            href="#">
-            <div class="d-flex justify-content-center align-items-center rounded-circle icon mx-2">
-              <i class="bi bi-house-door-fill"></i>
-            </div>
-            <span>Início</span>
-          </a>
-          <a class="nav-link px-2 py-2 rounded-pill d-flex align-items-center menu-item mb-3" href="#">
-            <div class="d-flex justify-content-center align-items-center rounded-circle icon mx-2">
-              <i class="bi bi-search"></i>
-            </div>
-            <span>Busca</span>
-          </a>
-          <a class="nav-link px-2 py-2 rounded-pill d-flex align-items-center menu-item mb-3" href="#">
-            <div class="d-flex justify-content-center align-items-center rounded-circle icon mx-2">
-              <i class="bi bi-bell-fill"></i>
-            </div>
-            <span>Notificações</span>
-          </a>
-          <a class="nav-link px-2 py-2 rounded-pill d-flex align-items-center menu-item mb-3" href="#">
-            <div class="d-flex justify-content-center align-items-center rounded-circle icon mx-2">
-              <img src="../../../assets/avatar.png" class="rounded-circle" alt="Imagem Perfil" />
-            </div>
-            <span>Voce</span>
-          </a>
-        </div>
-        <div class="d-flex justify-content-center ">
-          <a class="nav-link px-2 py-2 rounded-pill d-flex align-items-center   font-body-small fw-bolder" href="#"
-            style="gap:10px">
-            <i class="bi bi-box-arrow-right"></i>
-            <span class="">Sair</span>
-          </a>
-        </div>
-      </div>
-
+      <app-sidebar></app-sidebar>
     </div>
 
-
-
     <div class="col-8">
-
       <div class="container d-flex  flex-column align-items-center py-4  ">
         <form class="p-3 bg-white card-post form-group w-50 mb-4">
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
@@ -101,69 +58,9 @@
           </div>
         </div>
       </div>
-
-
     </div>
-
-
     <div class="col-2 px-0">
-      <div class="menu flex-column nav py-4 px-4 position-fixed">
-
-        <p class="font-body-small">Sugestões de Amizades:</p>
-
-        <div class="mb-3 py-3 border  px-3 card-follow">
-          <div class="d-flex align-items-center mb-3">
-            <div class=" d-flex justify-content-center align-items-center rounded-circle icon mx-2">
-              <img src="../../../assets/avatar.png" class="rounded-circle" alt="Imagem Perfil" />
-            </div>
-            <span class="font-body-xsmall fw-bolder">Marcos Medeiros</span>
-          </div>
-          <div class="d-flex justify-content-between ">
-            <button class="btn bg-white border-custom rounded-pill font-body-xsmall fw-bolder">Seguir</button>
-            <button class="btn bg-white rounded-pill font-body-xsmall fw-bolder">Excluir</button>
-          </div>
-        </div>
-
-        <div class="mb-3 py-3 border  px-3 card-follow">
-          <div class="d-flex align-items-center mb-3">
-            <div class=" d-flex justify-content-center align-items-center rounded-circle icon mx-2">
-              <img src="../../../assets/avatar.png" class="rounded-circle" alt="Imagem Perfil" />
-            </div>
-            <span class="font-body-xsmall fw-bolder">Marcos Medeiros</span>
-          </div>
-          <div class="d-flex justify-content-between ">
-            <button class="btn bg-white border-custom rounded-pill font-body-xsmall fw-bolder">Seguir</button>
-            <button class="btn bg-white rounded-pill font-body-xsmall fw-bolder">Excluir</button>
-          </div>
-        </div>
-
-        <div class="mb-3 py-3 border  px-3 card-follow">
-          <div class="d-flex align-items-center mb-3">
-            <div class=" d-flex justify-content-center align-items-center rounded-circle icon mx-2">
-              <img src="../../../assets/avatar.png" class="rounded-circle" alt="Imagem Perfil" />
-            </div>
-            <span class="font-body-xsmall fw-bolder">Marcos Medeiros</span>
-          </div>
-          <div class="d-flex justify-content-between ">
-            <button class="btn bg-white border-custom rounded-pill font-body-xsmall fw-bolder">Seguir</button>
-            <button class="btn bg-white rounded-pill font-body-xsmall fw-bolder">Excluir</button>
-          </div>
-        </div>
-
-        <div class="mb-3 py-3 border  px-3 card-follow">
-          <div class="d-flex align-items-center mb-3">
-            <div class=" d-flex justify-content-center align-items-center rounded-circle icon mx-2">
-              <img src="../../../assets/avatar.png" class="rounded-circle" alt="Imagem Perfil" />
-            </div>
-            <span class="font-body-xsmall fw-bolder">Marcos Medeiros</span>
-          </div>
-          <div class="d-flex justify-content-between ">
-            <button class="btn bg-white border-custom rounded-pill font-body-xsmall fw-bolder">Seguir</button>
-            <button class="btn bg-white rounded-pill font-body-xsmall fw-bolder">Excluir</button>
-          </div>
-        </div>
-
-      </div>
+     <app-sidebar-notification></app-sidebar-notification>
     </div>
   </div>
 </div>
