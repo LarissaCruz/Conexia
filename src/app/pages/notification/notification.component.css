@@ -44,7 +44,7 @@
 
 input {
   border: none;
-  width: 90%;
+
   margin-left: 10px;
   color:#808080;
   font-size: 14px;
@@ -54,4 +54,6 @@ input {
    border: 1px solid #333333;
 }
 
-
+.fw-semibold {
+  font-weight: 500 !important;
+}
