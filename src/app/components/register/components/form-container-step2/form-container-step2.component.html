@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="container pt-3 px-0  d-flex">
   <button class="rounded-circle bg-light border-0 button-back" (click)="goBack()">
     <i class="bi bi-arrow-left"></i>
@@ -15,7 +16,7 @@
     <p class=" text-center font-body-medium fw-semiBold mb-4">Quase lá, só nos conte mais sobre você:</p>
     <form class="">
       <div class="row ">
-        <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+        <div class="col-4 d-flex flex-column align-items-center justify-content-start ">
           <label class="image-container rounded border-custom" tabindex="0">
             <input type="file" (change)="onFileSelected($event)" accept="image/*" class="picture__input" />
             <i class="bi bi-camera" *ngIf="!imageSrc"></i>

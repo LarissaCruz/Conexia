@@ -5,18 +5,22 @@ import { FormContainerStep1Component } from './components/form-container-step1/f
 import { FormContainerStep2Component } from './components/form-container-step2/form-container-step2.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarModule } from '../shared/navbar/navbar.module';
+
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NavbarModule,
   ],
   declarations: [
     RegisterComponent,
     FormContainerStep1Component,
-    FormContainerStep2Component
+    FormContainerStep2Component,
   ],
   exports: [
     RegisterComponent
