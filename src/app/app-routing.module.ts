@@ -5,6 +5,7 @@ import { FormContainerStep2Component } from './components/register/components/fo
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FeedComponent } from './components/feed/feed.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,10 @@ const routes: Routes = [
     path: 'feed',
     component: FeedComponent
   },
+  {
+    path: 'search',
+    component: SearchComponent
+  }
 
 ];
 
