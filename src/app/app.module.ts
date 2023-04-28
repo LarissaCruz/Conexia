@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeModule } from './components/home/home.module';
 import { LoginModule } from './components/login/login.module';
 import { RegisterModule } from './components/register/register.module';
+import { FeedModule } from './components/feed/feed.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RegisterModule } from './components/register/register.module';
     AppRoutingModule,
     HomeModule,
     LoginModule,
-    RegisterModule
+    RegisterModule,
+    FeedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,10 @@
+<nav class="navbar navbar-expand-lg container-fluid d-flex justify-content-between py-2 ">
+  <div class="container px-0">
+    <div>
+      <a class="navbar-brand font-title-small fw-bolder fst-italic " href="#">Conexia</a>
+    </div>
+    <button *ngIf="observe.isVisible$ |async" type="button" (click)="naviation()"
+      class="font-body-small fw-bolder btn btn-outline-primary rounded-pill border-custom btn-hover-outline">Fazer
+      Login</button>
+  </div>
+</nav>
