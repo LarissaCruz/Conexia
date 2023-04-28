@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { AboutComponent } from './components/about/about.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { NavbarModule } from '../shared/navbar/navbar.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    NavbarModule
   ],
   declarations: [
     HomeComponent,
