@@ -7,6 +7,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { FeedComponent } from './components/feed/feed.component';
 import { SearchComponent } from './components/search/search.component';
 import { NotificationComponent } from './components/notification/notification.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { PublicacaoComponent } from './components/perfil/tab/publicacao/publicacao.component';
+import { SeguidoresComponent } from './components/perfil/tab/seguidores/seguidores.component';
+import { SeguindoComponent } from './components/perfil/tab/seguindo/seguindo.component';
 
 
 const routes: Routes = [
@@ -37,6 +41,10 @@ const routes: Routes = [
   {
     path: 'notification',
     component: NotificationComponent
+  },
+  {
+    path: 'perfil',
+    component: PerfilComponent
   }
 
 ];

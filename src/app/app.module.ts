@@ -10,6 +10,7 @@ import { RegisterModule } from './components/register/register.module';
 import { FeedModule } from './components/feed/feed.module';
 import { SearchModule } from './components/search/search.module';
 import { NotificationModule } from './components/notification/notification.module';
+import { PerfilModule } from './components/perfil/perfil.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NotificationModule } from './components/notification/notification.modul
     RegisterModule,
     FeedModule,
     SearchModule,
-    NotificationModule
+    NotificationModule,
+    PerfilModule
   ],
   providers: [],
   bootstrap: [AppComponent]
