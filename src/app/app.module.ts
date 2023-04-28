@@ -9,6 +9,7 @@ import { LoginModule } from './components/login/login.module';
 import { RegisterModule } from './components/register/register.module';
 import { FeedModule } from './components/feed/feed.module';
 import { SearchModule } from './components/search/search.module';
+import { NotificationModule } from './components/notification/notification.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SearchModule } from './components/search/search.module';
     LoginModule,
     RegisterModule,
     FeedModule,
-    SearchModule
+    SearchModule,
+    NotificationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

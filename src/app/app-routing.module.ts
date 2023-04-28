@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FeedComponent } from './components/feed/feed.component';
 import { SearchComponent } from './components/search/search.component';
+import { NotificationComponent } from './components/notification/notification.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'search',
     component: SearchComponent
+  },
+  {
+    path: 'notification',
+    component: NotificationComponent
   }
 
 ];
