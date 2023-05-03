@@ -1,92 +1,13 @@
-.menu{
-  height: 100vh;
-  background-color: #fff;
-  background: #FFFFFF;
-  border: 0.5px solid #1a1a1a6e;
-  border-top: none;
+ul {
+  list-style-type: none
 }
-
-.menu .menu-item:hover{
-  background: #BACAFF;
-  color: #1a1a1a;
-}
-.menu .menu-item span{
-  color: #808080;
-}
-
-.menu .menu-item {
-  color: #91ABFF !important;
-  width: 220px !important;
-}
-.active {
-  background: #BACAFF !important;
-  color: #1a1a1a !important;
-}
-.active .icon {
-  background: #91ABFF !important;
-}
-
-.menu .icon{
-  width: 40px;
-  height: 40px;
-  background: #D6DFFF;
-}
-
-.card-follow{
-  background: #F1F4FF;
-  border-radius: 16px;
-}
-
-.card-post {
-  border-radius: 24px;
-  border: 1px solid #1A1A1A;
-}
-
 
 input {
   border: none;
   margin-left: 10px;
   color:#808080;
-  font-size: 14px;
 }
 
-.form-control{
-   border: 1px solid #333333;
+.feed {
+  margin-bottom: 20%;
 }
-
-
-
-.nav-item {
-  width: 196px;
-  height: 56px;
-  border-radius: 40px;
-}
-.nav-item:hover {
-  background: #BACAFF;
-  color: #1a1a1a;
-}
-
-.nav-item span{
-  color: #808080;
-}
-
-.container-icon {
-  width: 40px;
-  height: 40px;
-  background: #D6DFFF !important;
-  color:#91ABFF
-}
-
-.active {
-  background: #BACAFF !important;
-  color: #1a1a1a !important;
-}
-.active span{
-  color: #1a1a1a ;
-  font-weight: 600;
-}
-.active .container-icon {
-  background: #91ABFF !important;
-  color: #1a1a1a  ;
-}
-

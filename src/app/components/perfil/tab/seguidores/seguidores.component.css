@@ -1,4 +1,3 @@
-
 input {
   border: none;
   margin-left: 10px;
@@ -22,4 +21,32 @@ input {
 .icon{
   width:4.18rem;
   height:4.18rem;
+}
+
+@media (min-width: 1300px) {
+  .container-seguidores {
+    width: 65% !important;
+  }
+}
+@media (max-width: 1271px) {
+  .container-seguidores {
+    width: 75% !important;
+  }
+}
+@media (max-width: 1270px) {
+ .container-seguidores {
+    width: 95% !important;
+  }
+}
+
+.btn-primary {
+  background-color: #7696FF;
+
+}
+.btn:hover{
+  color:#1a1a1a;
+}
+.btn-border:hover{
+   border: 1px solid #1a1a1a;
+   color:#1a1a1a;
 }

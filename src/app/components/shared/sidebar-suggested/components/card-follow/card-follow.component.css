@@ -21,3 +21,11 @@
 .font-body-xsmall{
   font-weight: 500;
 }
+
+.btn:hover{
+  background: #BACAFF !important;
+  color:#1a1a1a;
+}
+.btn-border:hover{
+   border: 1px solid #1a1a1a;
+}

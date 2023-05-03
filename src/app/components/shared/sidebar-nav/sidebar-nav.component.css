@@ -6,3 +6,26 @@
   border-top: none;
 }
 
+
+@media (min-width: 1300px) {
+  .menu {
+    width: 75% !important;
+    padding-left: 10%;
+    align-items: start !important;
+  }
+}
+@media (max-width: 1299px) {
+  .menu {
+    padding-left: 10%;
+    width: 85% !important;
+    align-items: center !important;
+  }
+}
+@media (max-width: 1083px) {
+  .menu {
+    padding-left: 10%;
+    width: 100% !important;
+    align-items: center !important;
+  }
+}
+

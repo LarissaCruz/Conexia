@@ -112,3 +112,6 @@ a {
   background-color: #7696FF !important;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+}
