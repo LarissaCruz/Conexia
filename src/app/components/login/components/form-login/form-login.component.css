@@ -22,6 +22,7 @@ input {
 .image {
   height: 300px;
 }
+
 @media (min-width: 1300px) {
   .row {
       width: 55%;
