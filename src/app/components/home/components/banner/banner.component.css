@@ -8,17 +8,10 @@
 .label {
   font-size: 14px;
 }
-
-.container-img {
-  width: 92%;
-  height: 100%;
-
+.image{
+  height: 500px;
 }
-.image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+
 @media (min-width: 1300px) {
 
   .container-text {
@@ -35,6 +28,8 @@
   }
   .container-img{
     justify-content: center;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -48,6 +43,13 @@
   }
   .container-img{
     justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  .image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .subtitle{
     text-align: center;
