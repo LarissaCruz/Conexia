@@ -118,3 +118,14 @@ a {
 ::-webkit-scrollbar {
   display: none;
 }
+/* Oculta a barra de rolagem */
+.scrollable::-webkit-scrollbar {
+  display: none;
+}
+
+/* Estilos da área com rolagem */
+.scrollable {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer e Edge */
+  overflow-y: scroll; /* Ativa a rolagem */
+}
