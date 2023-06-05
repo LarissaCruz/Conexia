@@ -1,87 +1,88 @@
-@import '~bootstrap-icons/font/bootstrap-icons.css';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 
 body {
-  font-family: 'Nunito Sans', sans-serif;
-  background-color: #F8F4F1;
+  font-family: "Nunito Sans", sans-serif;
+  background-color: #f8f4f1;
 }
-nav{
+nav {
   background-color: #ffffff;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
+    0px 2px 6px 2px rgba(0, 0, 0, 0.15);
 }
 
 .font-title-small {
-  color: #1A1A1A;
+  color: #1a1a1a;
   font-size: 1.75rem;
 }
 .font-title-medium {
-  color: #1A1A1A;
+  color: #1a1a1a;
   font-size: 2rem;
 }
 .font-title-large {
-  color: #1A1A1A;
+  color: #1a1a1a;
   font-size: 48px;
   line-height: 60px;
   font-weight: 800;
 }
 .font-body-xsmall {
-  color: #1A1A1A;
-  font-family: 'Montserrat';
+  color: #1a1a1a;
+  font-family: "Montserrat";
   font-size: 0.875rem;
 }
 .font-body-xxsmall {
-  color: #1A1A1A;
-  font-family: 'Montserrat';
+  color: #1a1a1a;
+  font-family: "Montserrat";
   font-size: 0.625rem;
 }
 .font-body-small {
-  color: #1A1A1A;
-  font-family: 'Montserrat';
+  color: #1a1a1a;
+  font-family: "Montserrat";
   font-size: 1rem;
 }
 .font-body-medium {
-  color: #1A1A1A;
-  font-family: 'Montserrat';
+  color: #1a1a1a;
+  font-family: "Montserrat";
   font-size: 1.125rem;
 }
 .font-body-large {
-  color: #1A1A1A;
-  font-family: 'Montserrat';
+  color: #1a1a1a;
+  font-family: "Montserrat";
   font-size: 1.375rem;
 }
 .font-body-extra-large {
-  color: #1A1A1A;
-  font-family: 'Montserrat';
+  color: #1a1a1a;
+  font-family: "Montserrat";
   font-size: 1.5rem;
 }
 
 .font-label {
-  color: #1A1A1A;
-  font-family: 'Montserrat';
+  color: #1a1a1a;
+  font-family: "Montserrat";
   font-size: 0.75rem;
 }
 .border-custom {
-  border: 1px solid #1A1A1A;
+  border: 1px solid #1a1a1a;
   box-shadow: 2px 2px 0px #000000;
 }
 
-.fw-semiBold{
+.fw-semiBold {
   font-weight: 500;
 }
 
 .thema-color-primary {
-  background-color: #B276FF;;
+  background-color: #b276ff;
 }
 .thema-color-secondary {
-  background-color: #F6DE08; ;
+  background-color: #f6de08;
 }
-.thema-color-success{
-  background-color: #88DE8A;;
+.thema-color-success {
+  background-color: #88de8a;
 }
-.thema-color-pink{
-  background-color: #FFABEF;;
+.thema-color-pink {
+  background-color: #ffabef;
 }
 .color-font {
-  color:#7696FF;
+  color: #7696ff;
 }
 
 a {
@@ -96,20 +97,19 @@ a {
 .btn-hover-outline:hover {
   cursor: default !important;
   opacity: 1 !important;
-  color: #1A1A1A !important;
+  color: #1a1a1a !important;
   font-weight: 600 !important;
   border: 1px solid #000 !important;
-  background-color: #D6DFFF !important;
+  background-color: #d6dfff !important;
 }
-
 
 .btn-hover:hover {
   cursor: default !important;
   opacity: 1 !important;
-  color: #1A1A1A !important;
+  color: #1a1a1a !important;
   font-weight: 600 !important;
   border: 1px solid #000 !important;
-  background-color: #7696FF !important;
+  background-color: #7696ff !important;
 }
 
 ::-webkit-scrollbar {
