@@ -14,51 +14,39 @@
 <div class="container d-flex flex-column justify-content-center  align-items-center">
   <div class="formulario  d-flex flex-column justify-content-center ">
     <p class=" text-center font-body-medium fw-semiBold mb-4">Quase lá, só nos conte mais sobre você:</p>
-    <form class="">
-      <div class="row ">
-        <div class=" col-lg-4 col-md-4 col-sm-5 col-12 d-flex flex-column align-items-center justify-content-start ">
+    <form class="" [formGroup]="formulario">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-5 col-12 d-flex flex-column align-items-center justify-content-start">
           <label class="image-container rounded border-custom" tabindex="0">
             <input type="file" (change)="onFileSelected($event)" accept="image/*" class="picture__input" />
             <i class="bi bi-camera" *ngIf="!imageSrc"></i>
-
-            <!-- Ícone do Font Awesome para representar o input de imagem -->
             <img [src]="imageSrc" *ngIf="imageSrc" alt="Imagem de Perfil" class="profile-image">
           </label>
           <label class="font-body-small mt-4">Foto</label>
         </div>
         <div class="col-lg-8 col-md-8 col-sm-7 col-12 grid-input">
           <div class="form-control rounded-pill px-3 mb-3">
-            <input type="email" class="font-body-small input-form no-focus-outline" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Nome">
+            <input type="email" class="font-body-small input-form no-focus-outline" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome" formControlName="nome">
           </div>
           <div class="form-control rounded-pill px-3 mb-3 justify-content-between">
-            <input type="email" class="font-body-small input-form no-focus-outline" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Sobrenome">
+            <input type="email" class="font-body-small input-form no-focus-outline" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Sobrenome" formControlName="sobrenome">
           </div>
           <div class="form-control rounded-pill px-3 mb-3 d-flex justify-content-between">
-            <input type="email" class="font-body-small input-form no-focus-outline" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Data de nacimento">
+            <input type="email" class="font-body-small input-form no-focus-outline" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Data de nascimento" formControlName="dataNascimento">
             <i class="bi bi-calendar-date-fill" style="color:#BACAFF"></i>
           </div>
           <div class="form-control rounded-pill px-3 mb-3 justify-content-between">
-            <input type="email" class="font-body-small input-form no-focus-outline" id="exampleInputEmail1"
-              aria-describedby="emailHelp" placeholder="Cidade">
+            <input type="email" class="font-body-small input-form no-focus-outline" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Cidade" formControlName="cidade">
           </div>
           <div class="d-flex justify-content-center align-items-center">
-            <p class=" text-center font-body-small w-100 ">Ao concluir você estará concordando com
-              nossa <span class="color-font">Politica
-                de Privacidade</span> e
-              <span class="color-font">Termos de Uso</span>.
-            </p>
+            <p class="text-center font-body-small w-100">Ao concluir você estará concordando com nossa <span class="color-font">Politica de Privacidade</span> e <span class="color-font">Termos de Uso</span>.</p>
           </div>
           <div class="d-flex justify-content-center">
-            <button type="button"
-              class="btn btn-outline-primary rounded-pill button border-custom px-5 font-body-small fw-bolder w-75 btn-no-hover btn-hover">
-              Concluir
-            </button>
+            <button type="button" (click)="onSave()"  class="btn btn-outline-primary rounded-pill button border-custom px-5 font-body-small fw-bolder w-75 btn-no-hover btn-hover">Concluir</button>
           </div>
         </div>
       </div>
     </form>
+
   </div>
 </div>

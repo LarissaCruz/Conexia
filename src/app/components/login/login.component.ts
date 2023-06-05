@@ -2,6 +2,7 @@ import { ObserveService } from './../../../service/observe/observe.service';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { DadosUsuarioService } from 'src/service/register/dados-usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
     // Voltar para a página anterior
     this.location.back();
   }
+
 
 
 }

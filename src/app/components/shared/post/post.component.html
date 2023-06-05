@@ -1,6 +1,6 @@
 <div class="container d-flex flex-column align-items-center py-4">
-  <form class="p-3 bg-white form-group mb-4">
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+  <form [formGroup]="formulario" class="p-3 bg-white form-group mb-4">
+    <textarea formControlName="texto" class="form-control" id="exampleFormControlTextarea1" rows="3"
       placeholder="O que está acontecendo?"></textarea>
     <p class="font-body-xxsmall mt-2">0 de 300 caracteres usados.</p>
 
@@ -8,7 +8,7 @@
       <i class="bi bi-plus-lg"></i>
       <span class="mx-3">Escolher Foto</span>
     </button>
-    <button class="btn btn-secondary rounded-pill font-body-xsmall fw-bolder w-100  ">
+    <button (click)="publicar()" class="btn btn-secondary rounded-pill font-body-xsmall fw-bolder w-100  ">
       Publicar
     </button>
   </form>
