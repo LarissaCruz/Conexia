@@ -10,10 +10,14 @@ import { DadosUsuarioService } from 'src/service/register/dados-usuario.service'
   styleUrls: ['./form-container-step2.component.css']
 })
 export class FormContainerStep2Component implements OnInit {
+  selectedFile: File | undefined;
   imageSrc: string | ArrayBuffer | null | undefined;
-  constructor(private router: Router, private location: Location, private formBuilder: FormBuilder, private dadosUsuarioService: DadosUsuarioService) { }
-
+  cadastroSucesso: string = '';
+  cadastroErro: string = '';
+  cadastroErroWarning: string = '';
   formulario!: FormGroup;
+  status: string = ''
+  constructor(private router: Router, private location: Location, private formBuilder: FormBuilder, private dadosUsuarioService: DadosUsuarioService) { }
 
   ngOnInit() {
     this.formulario = this.formBuilder.group({
@@ -30,10 +34,35 @@ export class FormContainerStep2Component implements OnInit {
       this.dadosUsuarioService.dadosUsuario.sobrenome = this.formulario.controls?.['sobrenome'].value;
       this.dadosUsuarioService.dadosUsuario.idade = this.formulario.controls?.['dataNascimento'].value;
       this.dadosUsuarioService.dadosUsuario.cidade = this.formulario.controls?.['cidade'].value;
+      this.dadosUsuarioService.dadosUsuario.imagem = this.imageSrc;
 
-      this.dadosUsuarioService.registrarUsuario();
+      this.dadosUsuarioService.registrarUsuario().subscribe(
+        (status) => {
+          if (status === "success") {
+            this.cadastroSucesso = 'Cadastro realizado com sucesso!';
+            this.cadastroErro = '';
+            setTimeout(() => {
+              this.cadastroSucesso = '';
+            }, 3000); // Remover o alerta após 3 segundos (3000 milissegundos)
+          } else if (status === "duplicidade") {
+            this.cadastroErroWarning = 'Erro esse email já esta sendo usado';
+            this.cadastroSucesso = '';
+            this.cadastroErro = '';
+            setTimeout(() => {
+              this.cadastroErroWarning = '';
+            }, 3000);
+          } else {
+            this.cadastroErro = 'Erro não foi possivel finalizar o cadastro';
+            this.cadastroSucesso = '';
+            setTimeout(() => {
+              this.cadastroErro = '';
+            }, 3000);
+          }
+        }
+      );
     }
   }
+
 
   navigation() {
     this.router.navigate(['/register'])
@@ -45,7 +74,7 @@ export class FormContainerStep2Component implements OnInit {
   }
 
   onFileSelected(event: any) {
-    const file: File = event.target.files[0];
+    this.selectedFile = event.target.files[0];
     const reader = new FileReader();
 
     // Função de retorno de chamada para ler o arquivo de imagem como URL de dados
@@ -54,6 +83,7 @@ export class FormContainerStep2Component implements OnInit {
     };
 
     // Lê o arquivo de imagem como URL de dados
-    reader.readAsDataURL(file);
+    if (this.selectedFile)
+      reader.readAsDataURL(this.selectedFile);
   }
 }

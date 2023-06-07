@@ -10,6 +10,7 @@ import { DadosUsuarioService } from 'src/service/register/dados-usuario.service'
 })
 export class PostComponent implements OnInit {
   formulario: FormGroup;
+  imageSrc: string | ArrayBuffer | null | undefined;
   constructor(private formBuilder: FormBuilder, private postService: PostService, private dadosUsuarioService: DadosUsuarioService) {
     this.formulario = this.formBuilder.group({
       texto: ['', [Validators.required]],
@@ -21,7 +22,20 @@ export class PostComponent implements OnInit {
 
   publicar() {
     if (this.formulario.valid) {
-      this.postService.create(this.formulario.get('texto')?.value, this.dadosUsuarioService.idUsuario);
+      this.postService.create(this.formulario.get('texto')?.value, this.dadosUsuarioService.idUsuario, this.imageSrc);
     }
+  }
+
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    const reader = new FileReader();
+
+    // Função de retorno de chamada para ler o arquivo de imagem como URL de dados
+    reader.onload = (e: any) => {
+      this.imageSrc = e.target.result;
+    };
+
+    // Lê o arquivo de imagem como URL de dados
+    reader.readAsDataURL(file);
   }
 }

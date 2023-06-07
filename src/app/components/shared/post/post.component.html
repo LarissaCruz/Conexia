@@ -3,8 +3,9 @@
     <textarea formControlName="texto" class="form-control" id="exampleFormControlTextarea1" rows="3"
       placeholder="O que está acontecendo?"></textarea>
     <p class="font-body-xxsmall mt-2">0 de 300 caracteres usados.</p>
-
-    <button class="btn btn-primary bg-white border-custom rounded-pill font-body-xsmall fw-bolder w-100 mb-3">
+    <input type="file" accept="image/*" style="display: none" #fileInput (change)="onFileSelected($event)">
+    <button class="btn btn-primary bg-white border-custom rounded-pill font-body-xsmall fw-bolder w-100 mb-3"
+      (click)="fileInput.click()">
       <i class="bi bi-plus-lg"></i>
       <span class="mx-3">Escolher Foto</span>
     </button>

@@ -10,6 +10,7 @@ import { DadosUsuarioService } from 'src/service/register/dados-usuario.service'
 })
 export class FormLoginComponent implements OnInit {
   formulario: FormGroup;
+  cadastroErro: string = '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -28,8 +29,19 @@ export class FormLoginComponent implements OnInit {
     if (this.formulario.valid) {
       const email = this.formulario.get('email')?.value;
       const senha = this.formulario.get('senha')?.value;
-      this.dadosUsuarioService.login(email, senha);
-      this.router.navigate(['/feed']);
+
+      this.dadosUsuarioService.login(email, senha).subscribe(
+        (status) => {
+          if (status === "success") {
+            this.router.navigate(['/feed']);
+          } else {
+            this.cadastroErro = 'Erro não foi possivel localizar essa conta';
+            setTimeout(() => {
+              this.cadastroErro = '';
+            }, 3000);
+          }
+        }
+      );
     }
   }
 

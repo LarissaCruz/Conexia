@@ -11,17 +11,17 @@ export class PostService {
 
 
 
-  create(texto: string, id: number): void {
+  create(texto: string, id: number, imageSrc: any): void {
 
-    const params = { texto, id };
+    const params = { texto, id, imageSrc };
     console.log("teste", params)
     this.http.post<any>(`${this.apiUrl}/publicacoes`, { params, responseType: 'text' }).subscribe(
       (response) => {
-        console.log("Usuário registrado com sucesso:", response);
+        console.log("Publicação inserida:", response);
         // Lógica para lidar com a resposta de sucesso
       },
       (error) => {
-        console.error("Erro ao registrar usuário:", error);
+        console.error("Erro ao registrar Publicação:", error);
         // Lógica para lidar com o erro
       }
     );

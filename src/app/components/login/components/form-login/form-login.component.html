@@ -9,6 +9,9 @@
     <div class="col-md-6 col-sm-6 col-12  d-flex flex-column  justify-content-center ">
       <p class="text-center font-body-medium fw-semiBold">Que bom ter você de volta!</p>
       <form [formGroup]="formulario">
+        <div class="alert mx-2" [ngClass]="{'alert-danger': cadastroErro} ">
+          {{cadastroErro}}
+        </div>
         <div class="form-control rounded-pill px-3 mb-4 d-flex justify-content-start" style="gap:5px">
           <i class="bi bi-envelope-fill" style="color:#808080;"></i>
           <input type="email" class="font-body-small no-focus-outline" id="exampleInputEmail1"
