@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-publicacao',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./publicacao.component.css']
 })
 export class PublicacaoComponent implements OnInit {
-
+  @Input() posts: any[] | undefined;
   constructor() { }
 
   ngOnInit() {

@@ -11,7 +11,7 @@ import { DadosUsuarioService } from 'src/service/register/dados-usuario.service'
 export class PostComponent implements OnInit {
   formulario: FormGroup;
   imageSrc: string | ArrayBuffer | null | undefined;
-  constructor(private formBuilder: FormBuilder, private postService: PostService, private dadosUsuarioService: DadosUsuarioService) {
+  constructor(private formBuilder: FormBuilder, private postService: PostService) {
     this.formulario = this.formBuilder.group({
       texto: ['', [Validators.required]],
     });
@@ -20,9 +20,20 @@ export class PostComponent implements OnInit {
   ngOnInit() {
   }
 
-  publicar() {
+  async publicar() {
     if (this.formulario.valid) {
-      this.postService.create(this.formulario.get('texto')?.value, this.dadosUsuarioService.idUsuario, this.imageSrc);
+      try {
+        const idUsuario = Number(localStorage.getItem('idUsuario'));
+        console.log("teste", idUsuario)
+        this.postService.create(this.formulario.get('texto')?.value, idUsuario, this.imageSrc);
+        // Inserção bem-sucedida, atualizar a página
+        location.reload(); // Atualizar a página manualmente
+        // Ou redirecionar o usuário para a página de visualização de publicações
+        // this.router.navigate(['/publicacoes']); // Redirecionar usando o roteador (caso esteja usando Angular com o Angular Router)
+      } catch (error) {
+        // Tratar erros durante a inserção
+        console.error('Erro ao inserir a publicação:', error);
+      }
     }
   }
 

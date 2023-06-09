@@ -45,7 +45,8 @@ const routes: Routes = [
   {
     path: 'perfil',
     component: PerfilComponent
-  }
+  },
+  { path: 'profile/:userId', component: PerfilComponent },
 
 ];
 

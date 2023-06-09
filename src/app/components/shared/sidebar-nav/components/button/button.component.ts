@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./button.component.css']
 })
 export class ButtonComponent implements OnInit {
+  dados: any;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
+    this.dados = JSON.parse(localStorage.getItem('usuario') || 'null');
+    console.log("this.dados", this.dados);
   }
 
   isLinkActive(url: string): boolean {

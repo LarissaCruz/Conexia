@@ -12,19 +12,17 @@ export class FeedComponent implements OnInit {
   constructor(private router: Router, private postService: PostService) { }
 
 
-    ngOnInit() {
-      this.postService.listarAllPost().subscribe(
-        (data) => {
-          this.posts = data[0]
-          this.posts.forEach((post: { imagemUrl: any; }) => {
-            console.log(post.imagemUrl)
-          });
-        },
-        (error) => {
-          console.error("Erro ao obter os dados:", error);
-          // Trate o erro de acordo com suas necessidades, exiba uma mensagem de erro ou tome outras ações necessárias.
-        }
-      );
+  ngOnInit() {
+    this.postService.listarAllPost().subscribe(
+      (response) => {
+        this.posts = response.data
+        console.log(" this.posts", this.posts)
+      },
+      (error) => {
+        console.error("Erro ao obter os dados:", error);
+        // Trate o erro de acordo com suas necessidades, exiba uma mensagem de erro ou tome outras ações necessárias.
+      }
+    );
 
   }
   navigation() {

@@ -7,15 +7,16 @@
     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-8 col-sm-8 " style="height: 100vh; overflow:auto">
       <div class="container d-flex flex-column align-items-center pb-4  ">
         <div class="capa py-4 d-flex flex-column align-items-center position-relative mb-5">
-          <div class="avatar">
-            <img src="../../../assets/avatar3.png" alt="" class="profile-image" />
+          <div class="avatar ">
+            <img [src]="usuario.imagem" alt="" class="profile-image rounded-3 border-custom" />
           </div>
-          <p class="font-body-medium fw-bold my-1 ">Luiza Senna</p>
+          <p class="font-body-medium fw-bold my-1 ">{{usuario.nome}} {{usuario.sobrenome}}</p>
           <div style="gap:15px" class="d-flex">
-            <span class="font-body-xsmall label">24 Anos</span>
-            <span class="font-body-xsmall label">Eunápolis-BA</span>
+            <span class="font-body-xsmall label">{{usuario.idade}} Anos</span>
+            <span class="font-body-xsmall label">{{usuario.cidade}}</span>
           </div>
-          <button class="btn bg-white border-custom rounded-pill font-body-xsmall fw-bolder position-absolute"
+          <button *ngIf="!userIdRoute"
+            class="btn bg-white border-custom rounded-pill font-body-xsmall fw-bolder position-absolute"
             style="bottom: -20px">
             <i class="bi bi-pencil-fill"></i>
             Editar Perfil
@@ -39,7 +40,7 @@
       </div>
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <app-publicacao></app-publicacao>
+          <app-publicacao [posts]="posts"></app-publicacao>
         </div>
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
           <app-seguindo></app-seguindo>

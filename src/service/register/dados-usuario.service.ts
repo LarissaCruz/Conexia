@@ -7,8 +7,9 @@ import { Observable, catchError, tap, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class DadosUsuarioService {
-  idUsuario: number = 0;
+  idUsuario: string = "";
   dadosUsuario: any = {};
+  usuario: any;
 
   private apiUrl = 'http://localhost:3000/api/usuarios';
 
@@ -43,6 +44,10 @@ export class DadosUsuarioService {
 
           const responseData = JSON.parse(response); // Converter a resposta de texto para objeto JSON
           this.idUsuario = responseData?.id;
+
+
+          localStorage.setItem('usuario', JSON.stringify(responseData.usuario));
+          localStorage.setItem('idUsuario', this.idUsuario);
           observer.next(responseData.status);
           observer.complete();
         },
