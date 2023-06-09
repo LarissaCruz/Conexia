@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PostService } from 'src/service/post/post.service';
 
 @Component({
   selector: 'app-feed',
@@ -7,12 +8,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
+  posts: any;
+  constructor(private router: Router, private postService: PostService) { }
 
-  constructor(private router: Router,) { }
 
-  ngOnInit() {
+    ngOnInit() {
+      this.postService.listarAllPost().subscribe(
+        (data) => {
+          this.posts = data[0]
+          this.posts.forEach((post: { imagemUrl: any; }) => {
+            console.log(post.imagemUrl)
+          });
+        },
+        (error) => {
+          console.error("Erro ao obter os dados:", error);
+          // Trate o erro de acordo com suas necessidades, exiba uma mensagem de erro ou tome outras ações necessárias.
+        }
+      );
+
   }
   navigation() {
     this.router.navigate(["./search"]);
   }
 }
+

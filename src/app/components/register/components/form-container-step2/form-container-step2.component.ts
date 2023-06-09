@@ -29,12 +29,14 @@ export class FormContainerStep2Component implements OnInit {
   }
 
   onSave() {
+
     if (this.formulario.valid) {
       this.dadosUsuarioService.dadosUsuario.nome = this.formulario.controls?.['nome'].value;
       this.dadosUsuarioService.dadosUsuario.sobrenome = this.formulario.controls?.['sobrenome'].value;
       this.dadosUsuarioService.dadosUsuario.idade = this.formulario.controls?.['dataNascimento'].value;
       this.dadosUsuarioService.dadosUsuario.cidade = this.formulario.controls?.['cidade'].value;
       this.dadosUsuarioService.dadosUsuario.imagem = this.imageSrc;
+
 
       this.dadosUsuarioService.registrarUsuario().subscribe(
         (status) => {
