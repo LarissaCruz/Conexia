@@ -1,26 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-sidebar-suggested',
   templateUrl: './sidebar-suggested.component.html',
   styleUrls: ['./sidebar-suggested.component.css']
 })
 export class SidebarSuggestedComponent implements OnInit {
+  private token = localStorage.getItem('token');
 
   constructor(private http: HttpClient) { }
   usuarioLogado: any
   ngOnInit() {
     this.usuarioLogado = JSON.parse(localStorage.getItem('usuario') || 'null');
-    const idade = this.usuarioLogado.idade;
+    /*const idade = this.usuarioLogado.idade;
     const id = this.usuarioLogado.id;
 
     const params = { idade, id };
-    console.log(params);
+    console.log(params);*/
+    const url = 'http://localhost:8080/api/v1/follow/recommend';
+    //const url = 'http://localhost:3000/api/usuarios/sugestion';
 
-    const url = 'http://localhost:3000/api/usuarios/sugestion';
-    this.http.get(url, { params }).subscribe(
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${this.token}`,
+    });
+
+    this.http.get(url, { "headers": headers }).subscribe(
       (response: any) => {
-        console.log('Usuários encontrados:', response.data);
+        console.log('follow:', response);
         // Faça o que for necessário com os dados dos usuários encontrados, como atribuir a uma variável do componente
       },
       (error: any) => {
@@ -29,6 +36,4 @@ export class SidebarSuggestedComponent implements OnInit {
       }
     );
   }
-
-
 }

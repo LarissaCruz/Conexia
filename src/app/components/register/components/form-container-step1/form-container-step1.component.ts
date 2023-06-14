@@ -37,9 +37,9 @@ export class FormContainerStep1Component implements OnInit {
   }
   async salvarEtapa1() {
     if (this.formulario.valid) {
-      this.dadosUsuarioService.dadosUsuario.email = this.formulario.controls?.['email'].value;
-      this.dadosUsuarioService.dadosUsuario.senha = this.formulario.controls?.['senha'].value;
-      this.dadosUsuarioService.dadosUsuario.confirmSenha = this.formulario.controls?.['confirm'].value;
+      this.dadosUsuarioService.dadosUsuario.login = this.formulario.controls?.['email'].value;
+      this.dadosUsuarioService.dadosUsuario.password = this.formulario.controls?.['senha'].value;
+     // this.dadosUsuarioService.dadosUsuario.confirmSenha = this.formulario.controls?.['confirm'].value;
       await this.router.navigate(['/form-step-2'])
     }
 

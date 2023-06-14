@@ -23,9 +23,9 @@ export class PostComponent implements OnInit {
   async publicar() {
     if (this.formulario.valid) {
       try {
-        const idUsuario = Number(localStorage.getItem('idUsuario'));
+        const idUsuario = localStorage.getItem('token');
         console.log("teste", idUsuario)
-        this.postService.create(this.formulario.get('texto')?.value, idUsuario, this.imageSrc);
+        this.postService.create(this.formulario.get('texto')?.value, this.imageSrc);
         // Inserção bem-sucedida, atualizar a página
         location.reload(); // Atualizar a página manualmente
         // Ou redirecionar o usuário para a página de visualização de publicações

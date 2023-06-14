@@ -11,13 +11,13 @@ export class DadosUsuarioService {
   dadosUsuario: any = {};
   usuario: any;
 
-  private apiUrl = 'http://localhost:3000/api/usuarios';
+  private apiUrl = 'http://localhost:8080/api/v1';
 
   constructor(private http: HttpClient) { }
 
   registrarUsuario(): Observable<string> {
     return new Observable<string>((observer) => {
-      this.http.post<any>(`${this.apiUrl}/registro`, this.dadosUsuario).subscribe(
+      this.http.post<any>(`${this.apiUrl}/account`, this.dadosUsuario).subscribe(
         (response) => {
           console.log("Usuário registrado com sucesso:", response);
           // Lógica para lidar com a resposta de sucesso
@@ -35,29 +35,32 @@ export class DadosUsuarioService {
     });
   }
 
-  login(email: string, senha: string): Observable<string> {
+  login(login: string, password: string): Observable<string> {
     return new Observable<string>((observer) => {
-      const params = { email, senha };
-      console.log(params)
-      this.http.get(`${this.apiUrl}/login`, { params, responseType: 'text' }).subscribe(
+      const params = { login, password };
+      this.http.post<any>(`${this.apiUrl}/login`, params ).subscribe(
         (response) => {
+          console.log("Login com sucesso");
+          console.log(response.token);
 
-          const responseData = JSON.parse(response); // Converter a resposta de texto para objeto JSON
-          this.idUsuario = responseData?.id;
+          console.log(response.id);
+          localStorage.setItem('token', response.token);
+          localStorage.setItem('id', response.id);
+          localStorage.setItem('image', response.image);
+          //observer.next(response);
+          let status= "success"
+          observer.next(status);
 
-
-          localStorage.setItem('usuario', JSON.stringify(responseData.usuario));
-          localStorage.setItem('idUsuario', this.idUsuario);
-          observer.next(responseData.status);
           observer.complete();
         },
         (error) => {
-          console.error("Erro usuário não encontrado:", error);
-          observer.next("error");
+          console.error("Erro ao registrar usuário:", error);
+          // Lógica para lidar com o erro
+          let status= "erro"
+          observer.next(status);
           observer.complete();
         }
       );
-    }
-    )
+    });
   }
 }

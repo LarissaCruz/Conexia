@@ -27,18 +27,18 @@ export class PerfilComponent implements OnInit {
       if (this.userIdRoute) {
         idUsuario = Number(this.userIdRoute);
       } else {
-        idUsuario = Number(localStorage.getItem('idUsuario'));
+        idUsuario = Number(localStorage.getItem('token'));
       }
 
       this.postService.listarPostUsuario(idUsuario).subscribe(
         (response) => {
           this.posts = response.data;
           this.usuario = this.posts[0].Usuario;
-          console.log(this.usuario);
-          console.log("this.posts", this.posts);
+          //console.log(this.usuario);
+          //console.log("this.posts", this.posts);
         },
         (error) => {
-          console.error("Erro ao obter os dados:", error);
+          //console.error("Erro ao obter os dados:", error);
           // Trate o erro de acordo com suas necessidades, exiba uma mensagem de erro ou tome outras ações necessárias.
         }
       );

@@ -15,11 +15,11 @@ export class FeedComponent implements OnInit {
   ngOnInit() {
     this.postService.listarAllPost().subscribe(
       (response) => {
-        this.posts = response.data
-        console.log(" this.posts", this.posts)
+        this.posts = response
+        console.log(" this.posts", response)
       },
       (error) => {
-        console.error("Erro ao obter os dados:", error);
+       console.error("Erro ao obter os dados:", error);
         // Trate o erro de acordo com suas necessidades, exiba uma mensagem de erro ou tome outras ações necessárias.
       }
     );

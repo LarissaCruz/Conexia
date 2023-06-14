@@ -2,14 +2,14 @@
   <div class="card-post p-3 bg-white mb-4" *ngFor="let post of posts">
     <div class="d-flex align-items-center mb-2">
       <div class="d-flex justify-content-center align-items-center rounded-circle  mx-2">
-        <img [src]="post.Usuario.imagem" class="rounded-circle" alt="Imagem Perfil" width="30px" />
+        <img [src]="post.authorImage" *ngIf="post.authorImage" class="rounded-circle" alt="Imagem Perfil" width="30px" />
       </div>
-      <a class="font-body-small fw-bold" [routerLink]="['/profile', post.Usuario.id]">{{post.Usuario.nome }}
-        {{post.Usuario.sobrenome}}</a>
+      <a class="font-body-small fw-bold" [routerLink]="['/profile', post.authorId]">{{post.authorFirstName }}
+        {{post.authorLastName}}</a>
     </div>
-    <img [src]="post.imagem" *ngIf="post.imagem" class="rounded w-100 mb-2 border border-secondary"
+    <img [src]="post.image" *ngIf="post.image" class="rounded w-100 mb-2 border border-secondary"
       alt="Imagem Perfil" />
-    <p class="font-body-xsmall">{{post.texto}}</p>
+    <p class="font-body-xsmall"> {{post.body}}</p>
     <a class="font-body-xsmall fw-bold " style="text-decoration: underline;">Ver todos os 24 comentários</a>
     <div class="form-control rounded-pill d-flex mt-3 justify-content-between">
       <input type="text" class="font-body-small no-focus-outline" id="exampleInputEmail1" aria-describedby="emailHelp"
