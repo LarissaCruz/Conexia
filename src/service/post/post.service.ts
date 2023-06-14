@@ -15,28 +15,35 @@ export class PostService {
     return value < 10 ? `0${value}` : value.toString(); // Adiciona um zero à esquerda se o valor for menor que 10
   }
 
-  create(body: string, image: any): void {
-    const currentDate = new Date(); // Cria um objeto Date com a data atual
-    const year = currentDate.getFullYear(); // Obtém o ano com 4 dígitos
-    const month = this.padZero(currentDate.getMonth() + 1); // Obtém o mês (lembre-se de adicionar 1 ao valor retornado pelo getMonth)
-    const day = this.padZero(currentDate.getDate()); // Obtém o dia
 
-    let date = `${year}-${month}-${day}`;
-    const params = {  body, date, image};
+  create(body: string, image: any): Observable<string> {
+    return new Observable<string>((observer) => {
+      const currentDate = new Date(); // Cria um objeto Date com a data atual
+      const year = currentDate.getFullYear(); // Obtém o ano com 4 dígitos
+      const month = this.padZero(currentDate.getMonth() + 1); // Obtém o mês (lembre-se de adicionar 1 ao valor retornado pelo getMonth)
+      const day = this.padZero(currentDate.getDate()); // Obtém o dia
 
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.token}`,
+      let date = `${year}-${month}-${day}`;
+      const params = {  body, date, image};
+
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${this.token}`,
+      });
+      this.http.post<any>(`${this.apiUrl}/post`, params,  { "headers": headers}).subscribe(
+        (response) => {
+          let status = "sucess"
+          console.log("Publicação inserida:", response);
+        },
+        (error) => {
+          let status = "error"
+          console.error("Erro ao registrar Publicação:", error);
+        }
+      );
     });
-    this.http.post<any>(`${this.apiUrl}/post`, params,  { "headers": headers}).subscribe(
-      (response) => {
-        console.log("Publicação inserida:", response);
-      },
-      (error) => {
-        console.error("Erro ao registrar Publicação:", error);
-      }
-    );
   }
+
+
 
   listarAllPost(): Observable<any> {
     const headers = new HttpHeaders({
@@ -47,7 +54,11 @@ export class PostService {
     return this.http.get<any>(`${this.apiUrl}/post`, { "headers": headers});
   }
   listarPostUsuario(id: number): Observable<any> {
-
-    return this.http.get<any>(`${this.apiUrl}/post/author/${this.id}`);
+    console.log("this.id", this.id)
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `${this.token}`,
+    });
+    return this.http.get<any>(`${this.apiUrl}/post/author/${this.id}`,  { "headers": headers});
   }
 }

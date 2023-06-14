@@ -8,12 +8,12 @@
       <div class="container d-flex flex-column align-items-center pb-4  ">
         <div class="capa py-4 d-flex flex-column align-items-center position-relative mb-5">
           <div class="avatar ">
-            <img [src]="usuario.imagem" alt="" class="profile-image rounded-3 border-custom" />
+            <img [src]="usuario.authorImage" alt="" class="profile-image rounded-3 border-custom" />
           </div>
-          <p class="font-body-medium fw-bold my-1 ">{{usuario.nome}} {{usuario.sobrenome}}</p>
+          <p class="font-body-medium fw-bold my-1 ">{{usuario.authorFirstName}} {{usuario.authorLastName}}</p>
           <div style="gap:15px" class="d-flex">
-            <span class="font-body-xsmall label">{{usuario.idade}} Anos</span>
-            <span class="font-body-xsmall label">{{usuario.cidade}}</span>
+            <span class="font-body-xsmall label">20 Anos</span>
+            <span class="font-body-xsmall label">Eunapolis</span>
           </div>
           <button *ngIf="!userIdRoute"
             class="btn bg-white border-custom rounded-pill font-body-xsmall fw-bolder position-absolute"

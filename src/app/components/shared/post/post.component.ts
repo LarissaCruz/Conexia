@@ -11,6 +11,9 @@ import { DadosUsuarioService } from 'src/service/register/dados-usuario.service'
 export class PostComponent implements OnInit {
   formulario: FormGroup;
   imageSrc: string | ArrayBuffer | null | undefined;
+  cadastroSucesso: string = '';
+  cadastroErro: string = '';
+  cadastroErroWarning: string = '';
   constructor(private formBuilder: FormBuilder, private postService: PostService) {
     this.formulario = this.formBuilder.group({
       texto: ['', [Validators.required]],
@@ -25,11 +28,34 @@ export class PostComponent implements OnInit {
       try {
         const idUsuario = localStorage.getItem('token');
         console.log("teste", idUsuario)
-        this.postService.create(this.formulario.get('texto')?.value, this.imageSrc);
-        // Inserção bem-sucedida, atualizar a página
+
+
         location.reload(); // Atualizar a página manualmente
-        // Ou redirecionar o usuário para a página de visualização de publicações
-        // this.router.navigate(['/publicacoes']); // Redirecionar usando o roteador (caso esteja usando Angular com o Angular Router)
+
+        this.postService.create(this.formulario.get('texto')?.value, this.imageSrc).subscribe(
+          (status) => {
+            if (status === "success") {
+              this.cadastroSucesso = 'Cadastro realizado com sucesso!';
+              this.cadastroErro = '';
+              setTimeout(() => {
+                this.cadastroSucesso = '';
+              }, 3000); // Remover o alerta após 3 segundos (3000 milissegundos)
+            } else if (status === "duplicidade") {
+              this.cadastroErroWarning = 'Erro esse email já esta sendo usado';
+              this.cadastroSucesso = '';
+              this.cadastroErro = '';
+              setTimeout(() => {
+                this.cadastroErroWarning = '';
+              }, 3000);
+            } else {
+              this.cadastroErro = 'Erro não foi possivel finalizar o cadastro';
+              this.cadastroSucesso = '';
+              setTimeout(() => {
+                this.cadastroErro = '';
+              }, 3000);
+            }
+          }
+        );
       } catch (error) {
         // Tratar erros durante a inserção
         console.error('Erro ao inserir a publicação:', error);

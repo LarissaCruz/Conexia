@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-card-follow',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-follow.component.css']
 })
 export class CardFollowComponent implements OnInit {
+  @Input() follow: any | undefined;
 
   constructor() { }
 

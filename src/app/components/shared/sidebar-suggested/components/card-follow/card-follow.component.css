@@ -29,3 +29,7 @@
 .btn-border:hover{
    border: 1px solid #1a1a1a;
 }
+
+.background-color-null {
+  background-color: #9fb6e6; /* ou qualquer outra cor de fundo desejada */
+}

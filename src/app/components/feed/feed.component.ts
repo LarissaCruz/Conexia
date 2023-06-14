@@ -16,7 +16,7 @@ export class FeedComponent implements OnInit {
     this.postService.listarAllPost().subscribe(
       (response) => {
         this.posts = response
-        console.log(" this.posts", response)
+
       },
       (error) => {
        console.error("Erro ao obter os dados:", error);

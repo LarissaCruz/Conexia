@@ -1,10 +1,9 @@
 <div class="w-100 d-flex justify-content-end">
   <div class="menu py-4 d-flex flex-column align-items-start">
     <p class="font-body-xsmall">Sugestões de Amizades:</p>
-    <app-card-follow></app-card-follow>
-    <app-card-follow></app-card-follow>
-    <app-card-follow></app-card-follow>
-    <app-card-follow></app-card-follow>
-    <app-card-follow></app-card-follow>
+    <div *ngFor="let follows of follow">
+      <app-card-follow [follow]="follows"></app-card-follow>
+    </div>
+
   </div>
 </div>

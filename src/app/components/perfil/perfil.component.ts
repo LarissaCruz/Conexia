@@ -20,22 +20,18 @@ export class PerfilComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.userIdRoute = params['userId']; // 'userId' é o nome do parâmetro de rota definido na configuração de rotas
-      console.log('ID do usuário:', this.userIdRoute);
-
       let idUsuario: number;
 
       if (this.userIdRoute) {
         idUsuario = Number(this.userIdRoute);
       } else {
-        idUsuario = Number(localStorage.getItem('token'));
+        idUsuario = Number(localStorage.getItem('id'));
       }
 
       this.postService.listarPostUsuario(idUsuario).subscribe(
         (response) => {
-          this.posts = response.data;
-          this.usuario = this.posts[0].Usuario;
-          //console.log(this.usuario);
-          //console.log("this.posts", this.posts);
+          this.posts = response;
+          this.usuario = response[0];
         },
         (error) => {
           //console.error("Erro ao obter os dados:", error);

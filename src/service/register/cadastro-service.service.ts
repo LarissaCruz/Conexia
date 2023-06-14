@@ -10,7 +10,6 @@ export class CadastroServiceService {
 
   finalizarCadastro() {
     const dadosUsuario = this.dadosUsuarioService.dadosUsuario;
-    // Aqui você pode acessar os dados do usuário e finalizar o cadastro
-    console.log(dadosUsuario);
+
   }
 }

@@ -1,4 +1,8 @@
 <div class="container d-flex flex-column align-items-center py-4">
+  <div class="alert mx-2"
+  [ngClass]="{'alert-success': cadastroSucesso, 'alert-danger': cadastroErro} ">
+  {{ cadastroSucesso || cadastroErro }}
+</div>
   <form [formGroup]="formulario" class="p-3 bg-white form-group mb-4">
     <textarea formControlName="texto" class="form-control" id="exampleFormControlTextarea1" rows="3"
       placeholder="O que está acontecendo?"></textarea>

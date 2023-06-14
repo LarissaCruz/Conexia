@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class SidebarSuggestedComponent implements OnInit {
   private token = localStorage.getItem('token');
-
+  public follow = []
   constructor(private http: HttpClient) { }
   usuarioLogado: any
   ngOnInit() {
@@ -27,7 +27,8 @@ export class SidebarSuggestedComponent implements OnInit {
 
     this.http.get(url, { "headers": headers }).subscribe(
       (response: any) => {
-        console.log('follow:', response);
+        this.follow = response
+        console.log('follow:',  this.follow );
         // Faça o que for necessário com os dados dos usuários encontrados, como atribuir a uma variável do componente
       },
       (error: any) => {

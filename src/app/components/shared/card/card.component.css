@@ -11,6 +11,7 @@ input {
   font-size: 14px;
 }
 
+
 @media (min-width: 1300px) {
   .card-post {
     width: 65% !important;
